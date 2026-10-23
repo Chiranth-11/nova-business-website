@@ -1,0 +1,281 @@
+
+/* 1. Basic page settings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #1e293b;
+  background-color: #ffffff;
+}
+
+/* 2. Navigation bar */
+header {
+  background-color: #ffffff;
+  padding: 18px 8%;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+nav h2 {
+  color: #2563eb;
+  font-size: 26px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #334155;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: #2563eb;
+}
+
+/* 3. Homepage hero section */
+#home {
+  background: linear-gradient(135deg, #eff6ff, #dbeafe);
+  text-align: center;
+  padding: 110px 8%;
+}
+
+#home h1 {
+  max-width: 850px;
+  margin: 0 auto 20px;
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.2;
+  color: #0f172a;
+}
+
+#home p {
+  max-width: 600px;
+  margin: 0 auto 30px;
+  color: #475569;
+  font-size: 18px;
+}
+
+/* 4. Buttons and action links */
+#home a,
+#contact a {
+  display: inline-block;
+  background-color: #2563eb;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 13px 26px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+#home a:hover,
+#contact a:hover {
+  background-color: #1d4ed8;
+}
+
+/* 5. About and contact sections */
+#about,
+#contact {
+  padding: 75px 8%;
+  text-align: center;
+}
+
+#about p,
+#contact p {
+  max-width: 650px;
+  margin: 15px auto 22px;
+  color: #64748b;
+}
+
+section h2 {
+  font-size: 32px;
+  margin-bottom: 18px;
+  color: #0f172a;
+}
+
+/* 6. Services section */
+#services {
+  background-color: #f8fafc;
+  padding: 75px 8%;
+  text-align: center;
+}
+
+#services article {
+  display: inline-block;
+  vertical-align: top;
+  width: 30%;
+  min-height: 180px;
+  margin: 12px 1%;
+  padding: 28px 22px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  text-align: left;
+  box-shadow: 0 5px 20px rgba(15, 23, 42, 0.04);
+  transition: transform 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+#services article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.10);
+}
+
+#services article h3 {
+  color: #2563eb;
+  margin-bottom: 12px;
+}
+
+#services article p {
+  color: #64748b;
+}
+
+/* 7. Footer */
+footer {
+  background-color: #0f172a;
+  color: #cbd5e1;
+  text-align: center;
+  padding: 24px 8%;
+}
+
+/* 8. Mobile responsive design */
+@media (max-width: 768px) {
+  header {
+    padding: 18px 5%;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  nav ul {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+  }
+
+  #home {
+    padding: 75px 6%;
+  }
+
+  #about,
+  #services,
+  #contact {
+    padding: 55px 6%;
+  }
+
+  #services article {
+    display: block;
+    width: 100%;
+    margin: 16px 0;
+  }
+}
+
+/* JavaScript navigation button */
+#menu-toggle {
+  display: none;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 14px;
+  background-color: #2563eb;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Contact form */
+#contact-form {
+  max-width: 560px;
+  margin: 30px auto 0;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: 2px solid #93c5fd;
+  border-color: #2563eb;
+}
+
+#contact-form button {
+  border: none;
+  border-radius: 8px;
+  background-color: #2563eb;
+  color: white;
+  padding: 13px 22px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#contact-form button:hover {
+  background-color: #1d4ed8;
+}
+
+#form-status {
+  margin-top: 16px;
+  color: #166534;
+  font-weight: 600;
+}
+
+/* Mobile navigation */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  #menu-toggle {
+    display: inline-block;
+  }
+
+  nav ul#nav-links {
+    display: none;
+    flex-basis: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 0;
+  }
+
+  nav ul#nav-links.is-open {
+    display: flex;
+  }
+}
